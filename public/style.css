@@ -1,0 +1,289 @@
+/* =====================
+   COLOR SYSTEM (LIGHT)
+===================== */
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --bg: #f3f4f6;
+  --card: #ffffff;
+  --text-main: #111827;
+  --text-muted: #4b5563;
+  --border: #e5e7eb;
+}
+
+/* =====================
+   GLOBAL
+===================== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+/* =====================
+   LANDING PAGE
+===================== */
+.landing-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.brand {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.logo-tagline {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 35px;
+}
+
+/* HERO TITLE */
+.hero-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #4f46e5, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto 35px;
+}
+
+/* FEATURES */
+.features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.features li {
+  font-size: 16px;
+  margin: 10px 0;
+  color: var(--text-main);
+}
+
+/* BUTTONS */
+.cta-buttons button {
+  padding: 14px 30px;
+  margin: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: var(--primary);
+  color: white;
+}
+
+.cta-buttons button:hover {
+  background: var(--primary-dark);
+}
+
+.cta-buttons .secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.cta-buttons .secondary:hover {
+  background: rgba(79,70,229,0.1);
+}
+
+/* FOOTER */
+.footer-tagline {
+  margin-top: 50px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* =====================
+   ROOM PAGE
+===================== */
+.card {
+  background: var(--card);
+  padding: 32px;
+  border-radius: 14px;
+  width: 380px;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  margin-bottom: 20px;
+}
+
+.card input {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 15px;
+}
+
+/* =====================
+   CHAT UI
+===================== */
+#chatBox {
+  width: 520px;
+  height: 650px;
+  background: var(--card);
+  border-radius: 16px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 16px 32px rgba(0,0,0,0.15);
+}
+
+#header {
+  background: var(--primary);
+  color: white;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px 16px 0 0;
+}
+
+#main {
+  display: flex;
+  flex: 1;
+}
+
+#users {
+  width: 140px;
+  background: #f9fafb;
+  padding: 14px;
+  border-right: 1px solid var(--border);
+}
+
+#users h4 {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+#chat {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background: #eef2ff;
+}
+
+.message {
+  max-width: 75%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  font-size: 15px;
+}
+
+.my-message {
+  background: #c7d2fe;
+  margin-left: auto;
+}
+
+.other-message {
+  background: white;
+}
+
+.time,
+.status {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.system {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 10px 0;
+}
+
+/* INPUT */
+#inputArea {
+  display: flex;
+  gap: 10px;
+  padding: 14px;
+  border-top: 1px solid var(--border);
+}
+
+#inputArea input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+/* =====================
+   🌙 DARK MODE (FIXED)
+===================== */
+body.dark {
+  background: #0b1220;
+  color: #e5e7eb;
+}
+
+body.dark .brand {
+  color: #818cf8;
+}
+
+body.dark .hero-title {
+  background: linear-gradient(90deg, #818cf8, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.dark .logo-tagline,
+body.dark .description,
+body.dark .features li,
+body.dark .footer-tagline {
+  color: #cbd5e1;
+}
+
+body.dark .card,
+body.dark #chatBox {
+  background: #111827;
+}
+
+body.dark #users {
+  background: #020617;
+}
+
+body.dark #chat {
+  background: #020617;
+}
+
+body.dark .other-message {
+  background: #1e293b;
+  color: #e5e7eb;
+}
+
+body.dark .my-message {
+  background: #4f46e5;
+  color: white;
+}
+
+body.dark input {
+  background: #020617;
+  color: #e5e7eb;
+  border-color: #334155;
+}
+
+body.dark .cta-buttons .secondary {
+  color: #a5b4fc;
+  border-color: #a5b4fc;
+}

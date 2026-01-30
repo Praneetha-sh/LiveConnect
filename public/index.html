@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LiveConnect – Real-Time Chat Rooms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="landingPage" class="landing-container">
+
+  <header class="header">
+    <h1 class="brand">LiveConnect</h1>
+    <p class="logo-tagline">Instant conversations. Real connections.</p>
+  </header>
+
+  <div class="hero-content">
+    <h2 class="hero-title">Welcome to LiveConnect</h2>
+
+    <p class="description">
+      LiveConnect lets you create real-time chat rooms and connect instantly.
+      Share a simple room code with anyone and start talking right away.
+      No accounts. No setup. Just fast, live conversations.
+    </p>
+
+    <!-- ✅ NO DOTS / NO TICKS -->
+    <div class="feature-list">
+      <p>Unlimited users per room</p>
+      <p>Invite-based access using room codes</p>
+      <p>Live typing indicators & online users</p>
+      <p>Dark mode support</p>
+      <p>Message timestamps & read receipts</p>
+    </div>
+
+    <div class="cta-buttons">
+      <button onclick="showCreate()">Create a Room</button>
+      <button class="secondary" onclick="showJoin()">Join with Code</button>
+    </div>
+  </div>
+
+  <footer class="footer-tagline">
+    Built for seamless real-time communication
+  </footer>
+</section>
+
+<section id="roomPage" class="card" style="display:none;">
+  <h2>Enter Room</h2>
+  <input id="username" placeholder="Your name">
+  <input id="roomCodeInput" placeholder="Room code">
+  <button onclick="enterChat()">Enter Chat</button>
+</section>
+
+<section id="chatBox" style="display:none;">
+  <div id="header">
+    <strong id="roomHeader"></strong>
+    <button id="themeToggle" onclick="toggleTheme()">🌙</button>
+  </div>
+
+  <div id="main">
+    <aside id="users">
+      <h4>Online</h4>
+      <ul id="userList"></ul>
+    </aside>
+
+    <div id="chatSection">
+      <div id="chat"></div>
+      <div id="typing" class="system"></div>
+
+      <div id="inputArea">
+        <input id="message" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
